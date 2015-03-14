@@ -1,0 +1,88 @@
+<html ng-app="app"> 
+
+<head>
+    <meta charset="UTF-8">
+    <title>Filter sample template </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 50px;            
+        }        
+    </style>    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>        
+                
+    <!-- quick and dirty angular app setup for testing the filter-->        
+    <script>    
+        var app = angular.module('app', []);    
+        app.controller( 'main' , function($scope){
+           $scope.aDate = new Date(1425235920000); //01/03/2015
+        });
+    </script>
+    
+    <!-- include the filter -->
+    <script src="timesince.filter.js"></script> 
+    
+</head>
+
+<body>
+    <div class="container">
+    <div class="col-md-8 col-md-offset-2" ng-controller="main">        
+        <div>        
+            <h1>AngularJS TimeSince Filter</h1>   
+            <p>
+                An AngularJS filter for displaying time in facebook format: "6 minutes ago", "2 days ago", "1 week ago"
+            </p>
+            <a href="https://github.com/sanjeyac/angular-timesince-filter">Download source</a>
+            - 
+            <a href="http://rawgit.com/sanjeyac/angular-timesince-filter/master/index.html">Demo page</a>
+        </div>
+        <hr />
+        <h2> Example </h2>
+        <div>            
+            <p>
+                <h3>Filtered text / Result</h3>
+                <blockquote>
+                    01/03/2015 is <span ng-bind="aDate | timesince">time ago</span>
+                </blockquote>
+            </p>
+        </div>
+        <hr />
+        <div>            
+            <h2>Usage</h2>
+            <ol>
+                <li>Include "timesince.filter.js" in the html head</li>
+                <li>Change the app module name in the filter to your app name (default name is set to 'app')</li>
+                <li>Use the filter</li>
+            </ol>
+            
+
+<pre style='color:#000000;background:#f1f0f0; text-align:left'>
+<pre>
+<span style='color:#a65700; '>&lt;</span><span style='color:#400000; font-weight:bold; '>html</span><span style='color:#074726; '> ng-app</span><span style='color:#806030; '>=</span><span style='color:#e60000; '>"app"</span><span style='color:#a65700; '>></span> 
+<span style='color:#a65700; '>&lt;</span><span style='color:#400000; font-weight:bold; '>head</span><span style='color:#a65700; '>></span>
+    ...template, angular stuff, etc<span style='color:#8c0000; '>...</span>
+
+    <span style='color:#c34e00; '>&lt;!-- include the filter --></span>
+    <span style='color:#a65700; '>&lt;</span><span style='color:#400000; font-weight:bold; '>script src="timesince.filter.js"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#400000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span> 
+
+    ....
+<span style='color:#a65700; '>&lt;/</span><span style='color:#400000; font-weight:bold; '>head</span><span style='color:#a65700; '>></span>
+<span style='color:#a65700; '>&lt;</span><span style='color:#400000; font-weight:bold; '>body</span><span style='color:#a65700; '>></span>
+    <span style='color:#a65700; '>&lt;</span><span style='color:#400000; font-weight:bold; '>div</span><span style='color:#074726; '> ng-controller</span><span style='color:#806030; '>=</span><span style='color:#e60000; '>"main"</span><span style='color:#a65700; '>></span>
+        ...
+        <span style='color:#a65700; '>&lt;</span><span style='color:#400000; font-weight:bold; '>span</span><span style='color:#074726; '> ng-bind</span><span style='color:#806030; '>=</span><span style='color:#e60000; '>"date | timesince"</span><span style='color:#a65700; '>></span> long long time ago<span style='color:#a65700; '>&lt;/</span><span style='color:#400000; font-weight:bold; '>span</span><span style='color:#a65700; '>></span>
+        ...        
+    <span style='color:#a65700; '>&lt;/</span><span style='color:#400000; font-weight:bold; '>div</span><span style='color:#a65700; '>></span>
+<span style='color:#a65700; '>&lt;/</span><span style='color:#400000; font-weight:bold; '>body</span><span style='color:#a65700; '>></span>
+
+<span style='color:#a65700; '>&lt;/</span><span style='color:#400000; font-weight:bold; '>html</span><span style='color:#a65700; '>></span>
+</pre>
+</pre>
+            
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
